@@ -19,7 +19,7 @@ void PID::implement_position_PID()
 {
   this->component_d = this->component_p;
   this->component_p = this->component_i;
-  this->component_i = this->target - this->motor->getPosition();
+  this->component_i = this->target - this->Motor->getPosition();
   this->component_p = this->component_i - this->component_p;
   this->component_d = this->component_p - this->component_d;
   this->speed_pwm += Kp * this->component_p + Ki * this->component_i + Kd * this->component_d;
@@ -36,7 +36,7 @@ void PID::implement_position_PID()
 void PID::implement_velocity_PID()
 {
   this->component_d = this->component_p;
-  this->component_p = this->target - this->motor->getSpeed();
+  this->component_p = this->target - this->Motor->getSpeed();
   this->component_i += this->component_p;
   this->component_d = this->component_p - this->component_d;
   this->speed_pwm += Kp * this->component_p + Ki * this->component_i + Kd * this->component_d;
@@ -48,4 +48,9 @@ void PID::implement_velocity_PID()
   {
     speed_pwm = PWMLimit;
   }
+}
+
+int PID::get_pwm()
+{
+  return this->speed_pwm;
 }

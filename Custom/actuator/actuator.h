@@ -41,6 +41,10 @@ class MD10C : public motor
 
   uint8_t direction, pwm;
 
+  void rotateAntiClockwise(int);
+  void rotateClockwise(int);
+  void stop();
+
   public:
 
   MD10C(uint8_t, uint8_t, uint8_t, uint8_t);
@@ -53,6 +57,10 @@ class ZK5AD : public motor
   private:
 
   uint8_t motorA, motorB;
+
+  void rotateAntiClockwise(int);
+  void rotateClockwise(int);
+  void stop();
   
   public:
 
@@ -67,6 +75,10 @@ class L298N : public motor
 
   uint8_t enable, motorA, motorB;
 
+  void rotateAntiClockwise(int);
+  void rotateClockwise(int);
+  void stop();
+
   public:
 
   L298N(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t);
@@ -80,6 +92,10 @@ class TB6600 : public motor
   
   uint8_t direction, pulse;
   int step_duration;
+
+  void rotateAntiClockwise(int);
+  void rotateClockwise(int);
+  void stop();
   
   public:
   
