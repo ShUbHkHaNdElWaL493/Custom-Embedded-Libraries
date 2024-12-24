@@ -32,7 +32,7 @@ class motor
   int getPosition();
   int getSpeed();
 
-}
+};
 
 class MD10C : public motor
 {
