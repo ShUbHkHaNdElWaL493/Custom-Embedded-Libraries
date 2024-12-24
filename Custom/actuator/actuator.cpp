@@ -76,7 +76,7 @@ void MD10C::stop()
   analogWrite(pwm, 0);
 }
 
-MD10C::MD10C(uint8_t direction, uint8_t pwm, uint8_t encoderA = 0, uint8_t encoderB = 0) : direction(direction), pwm(pwm), motor(encoderA, encoderB)
+MD10C::MD10C(uint8_t direction, uint8_t pwm, uint8_t encoderA, uint8_t encoderB) : direction(direction), pwm(pwm), motor(encoderA, encoderB)
 {
   pinMode(this->direction, OUTPUT);
   pinMode(this->pwm, OUTPUT);
@@ -100,7 +100,7 @@ void ZK5AD::stop()
   analogWrite(motorB, 0);
 }
 
-ZK5AD::ZK5AD(uint8_t motorA, uint8_t motorB, uint8_t encoderA = 0, uint8_t encoderB = 0) : motorA(motorA), motorB(motorB), motor(encoderA, encoderB)
+ZK5AD::ZK5AD(uint8_t motorA, uint8_t motorB, uint8_t encoderA, uint8_t encoderB) : motorA(motorA), motorB(motorB), motor(encoderA, encoderB)
 {
   pinMode(this->motorA, OUTPUT);
   pinMode(this->motorB, OUTPUT);
@@ -125,7 +125,7 @@ void L298N::stop()
   analogWrite(enable, 0);
 }
 
-L298N::L298N(uint8_t enable, uint8_t motorA, uint8_t motorB, uint8_t encoderA = 0, uint8_t encoderB = 0) : enable(enable), motorA(motorA), motorB(motorB), motor(encoderA, encoderB)
+L298N::L298N(uint8_t enable, uint8_t motorA, uint8_t motorB, uint8_t encoderA, uint8_t encoderB) : enable(enable), motorA(motorA), motorB(motorB), motor(encoderA, encoderB)
 {
   pinMode(this->enable, OUTPUT);
   pinMode(this->motorA, OUTPUT);
