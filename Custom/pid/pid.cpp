@@ -54,3 +54,8 @@ int PID::get_pwm()
 {
   return this->speed_pwm;
 }
+
+void PID::get_pwm(int speed_pwm)
+{
+  this->speed_pwm = speed_pwm;
+}

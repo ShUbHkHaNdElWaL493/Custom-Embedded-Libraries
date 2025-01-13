@@ -30,10 +30,10 @@ class PID
   void set_target(int);
 
   void implement_position_PID();
-
   void implement_velocity_PID();
 
   int get_pwm();
+  void set_pwm(int);
 
 };
 
